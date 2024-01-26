@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Cards from "./components/CharacterCard";
 import { SWRProvider } from "./swr-provider";
+import SpellCard from "./components/SpellCard";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
             Harry Potter
           </span>
         </p>
+        <SpellCard />
         <Cards />
       </main>
     </SWRProvider>
