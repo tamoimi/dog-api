@@ -1,10 +1,15 @@
 /** @type {import('next').NextConfig} */
 
-const nextConfig = {
+// const nextConfig = {
+//   images: {
+//     remotePatterns: [{ protocol: "https", port: "", hostname: "ik.imagekit.io", pathname: "/hpapi/**" }],
+//   },
+// };
+
+// module.exports = nextConfig;
+
+module.exports = {
   images: {
-    remotePatterns: [{ protocol: "https", port: "", hostname: "cdn2.thedogapi.com", pathname: "/images/**" }],
+    domains: ['ik.imagekit.io'],
   },
 };
-
-module.exports = nextConfig;
-// "https://cdn2.thedogapi.com/images/Syd4xxqEm_1280.jpg"
