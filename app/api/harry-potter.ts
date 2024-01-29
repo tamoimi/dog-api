@@ -11,3 +11,8 @@ export const getCharacters = () => {
 export const getSpells = () => {
   return axios.get(`${baseUrl}/spells`).then((res) => res.data);
 };
+
+// harry-potter get detail by id parameter
+export const getDetail = (id: any) => {
+  return axios.get(`${baseUrl}/character/${id}`).then((res) => res.data);
+};
