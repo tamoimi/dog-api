@@ -24,7 +24,8 @@ const CharacterCard = () => {
                 className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
                 key={p.id}
               >
-                <Link href={`/character/${p.id}`}>
+                {/* <Link href={`/character/${p.id}`}> */}
+                <Link href={"/"}>
                   <Image
                     className="rounded-t-lg"
                     src={p.image}
@@ -36,7 +37,7 @@ const CharacterCard = () => {
                   />
                 </Link>
                 <div className="p-5">
-                <Link href={`/character/${p.id}`}>
+                  <Link href={"/"}>
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                       {p.name}
                     </h5>
@@ -47,7 +48,8 @@ const CharacterCard = () => {
                   <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{p.house}</p>
                   <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{p.home}</p>
                   <Link
-                    href={`/character/${p.id}`}
+                    // href={`/character/${p.id}`}
+                    href={"/"}
                     className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-yellow-900 rounded-lg hover:bg-yellow-800 "
                   >
                     Read more
