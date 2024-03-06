@@ -28,9 +28,7 @@ export default async function DetailCard({ id }: { id: string }) {
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               {character.name}
             </h5>
-            <p className="text-gray-700 dark:text-gray-400">
-              {/* Alternate Names: {character.alternate_names.join(", ")} */}
-            </p>
+            <p className="text-gray-700 dark:text-gray-400">{character.alternate_names}</p>
             <p>Species: {character.species}</p>
             <p>Gender: {character.gender}</p>
             <p>House: {character.house}</p>
@@ -39,10 +37,7 @@ export default async function DetailCard({ id }: { id: string }) {
             <p>Ancestry: {character.ancestry}</p>
             <p>Eye Colour: {character.eyeColour}</p>
             <p>Hair Colour: {character.hairColour}</p>
-            <p>
-              {/* Wand:{" "}
-              {`${character.wand.wood} wood with a ${character.wand.core} core ${character.wand.length}"`} */}
-            </p>
+            <p>Wand: {`${character.wand.wood} with a ${character.wand.core}`}</p>
             <p>Patronus: {character.patronus}</p>
             <p>Hogwarts Student: {character.hogwartsStudent ? "Yes" : "No"}</p>
             <p>Hogwarts Staff: {character.hogwartsStaff ? "Yes" : "No"}</p>
