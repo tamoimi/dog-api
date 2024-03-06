@@ -13,7 +13,7 @@ export default async function CharacterCard() {
 
   return (
     <>
-      <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-6">
+      <div className="grid md:grid-cols-4 grid-cols-2 gap-6">
         {characters?.slice(0, 20).map((p: any) => (
           <div
             className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
@@ -30,9 +30,9 @@ export default async function CharacterCard() {
                 sizes="100vw"
               />
             </Link>
-            <div className="p-5">
+            <div className="p-2">
               <Link href={"/"}>
-                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                <h5 className="mb-2 text-sm font-bold tracking-tight text-gray-900 dark:text-white">
                   {p.name}
                 </h5>
               </Link>
@@ -43,7 +43,7 @@ export default async function CharacterCard() {
                 href={`/characters/${p.id}`}
                 className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-yellow-900 rounded-lg hover:bg-yellow-800 "
               >
-                Read more
+                Read
                 <svg
                   className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
                   aria-hidden="true"
