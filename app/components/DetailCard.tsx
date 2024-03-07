@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { API_URL } from "../api/harry-potter";
+import NavBar from "./NavBar";
 
 async function getCharacterDetail(id: string) {
   const response = await fetch(`${API_URL}/character/${id}`);
@@ -13,13 +14,14 @@ export default async function DetailCard({ id }: { id: string }) {
   console.log("character", character);
   return (
     <>
-      <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-6">
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="p-5">
+        <NavBar />
+        <div className=" m-auto mt-2 max-w-sm bg-white border border-gray-200 rounded-lg shadow ">
           <Image
             className="rounded-t-lg"
             src={character.image}
             alt={character.name}
-            width={500}
+            width={300}
             height={500}
             style={{ width: "100%", height: "auto" }}
             sizes="100vw"
