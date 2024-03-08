@@ -16,7 +16,7 @@ export default async function CharacterCard() {
       <div className="grid md:grid-cols-4 grid-cols-2 gap-6">
         {characters?.slice(0, 20).map((p: any) => (
           <div
-            className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
             key={p.id}
           >
             <Link href={`/characters/${p.id}`}>
@@ -36,14 +36,17 @@ export default async function CharacterCard() {
                   {p.name}
                 </h5>
               </Link>
-              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{p.dateOfBirth}</p>
-              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{p.house}</p>
-              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{p.home}</p>
+              <p className=" text-gray-700 dark:text-gray-400 font-medium">
+                House: <span>{p.house}</span>
+              </p>
+              <p className=" font-medium text-gray-700 dark:text-gray-400 mb-2">
+                Gender: {p.gender}
+              </p>
               <Link
                 href={`/characters/${p.id}`}
-                className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-yellow-900 rounded-lg hover:bg-yellow-800 "
+                className="inline-flex items-center p-2 text-sm text-center text-white bg-yellow-900 rounded-lg hover:bg-yellow-800 "
               >
-                Read
+                Read more
                 <svg
                   className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
                   aria-hidden="true"
