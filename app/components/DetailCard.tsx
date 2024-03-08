@@ -30,21 +30,31 @@ export default async function DetailCard({ id }: { id: string }) {
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               {character.name}
             </h5>
-            <p className="text-gray-700 dark:text-gray-400">{character.alternate_names}</p>
-            <p>Species: {character.species}</p>
-            <p>Gender: {character.gender}</p>
-            <p>House: {character.house}</p>
-            <p>Date of Birth: {character.dateOfBirth}</p>
-            <p>Wizard: {character.wizard ? "Yes" : "No"}</p>
-            <p>Ancestry: {character.ancestry}</p>
-            <p>Eye Colour: {character.eyeColour}</p>
-            <p>Hair Colour: {character.hairColour}</p>
-            <p>Wand: {`${character.wand.wood} with a ${character.wand.core}`}</p>
-            <p>Patronus: {character.patronus}</p>
-            <p>Hogwarts Student: {character.hogwartsStudent ? "Yes" : "No"}</p>
-            <p>Hogwarts Staff: {character.hogwartsStaff ? "Yes" : "No"}</p>
-            <p>Actor: {character.actor}</p>
-            <p>Alive: {character.alive ? "Yes" : "No"}</p>
+            <ul className=" bg-neutral-100 p-1 rounded-xl my-2">
+              {character.alternate_names && character.alternate_names.length > 0 ? (
+                character.alternate_names.map((name: string, index: number) => (
+                  <li key={index}>-{name}</li>
+                ))
+              ) : (
+                <li>No alternate names available</li>
+              )}
+            </ul>
+            <div className="flex flex-col gap-1">
+              <p>Species: {character.species}</p>
+              <p>Gender: {character.gender}</p>
+              <p>House: {character.house}</p>
+              <p>Date of Birth: {character.dateOfBirth}</p>
+              <p>Wizard: {character.wizard ? "Yes" : "No"}</p>
+              <p>Ancestry: {character.ancestry}</p>
+              <p>Eye Colour: {character.eyeColour}</p>
+              <p>Hair Colour: {character.hairColour}</p>
+              <p>Wand: {`${character.wand.wood} with a ${character.wand.core}`}</p>
+              <p>Patronus: {character.patronus}</p>
+              <p>Hogwarts Student: {character.hogwartsStudent ? "Yes" : "No"}</p>
+              <p>Hogwarts Staff: {character.hogwartsStaff ? "Yes" : "No"}</p>
+              <p>Actor: {character.actor}</p>
+              <p>Alive: {character.alive ? "Yes" : "No"}</p>
+            </div>
           </div>
         </div>
       </div>
