@@ -30,16 +30,16 @@ export default async function DetailCard({ id }: { id: string }) {
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               {character.name}
             </h5>
-            <ul className=" bg-neutral-100 p-1 rounded-xl my-2">
+            <ul className=" bg-neutral-100 p-2 rounded-xl my-2">
               {character.alternate_names && character.alternate_names.length > 0 ? (
                 character.alternate_names.map((name: string, index: number) => (
-                  <li key={index}>-{name}</li>
+                  <li key={index}>• {name}</li>
                 ))
               ) : (
                 <li>No alternate names available</li>
               )}
             </ul>
-            <div className="flex flex-col gap-1">
+            <div className="grid grid-cols-2 gap-1 text-sm">
               <p>Species: {character.species}</p>
               <p>Gender: {character.gender}</p>
               <p>House: {character.house}</p>
