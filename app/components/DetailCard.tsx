@@ -11,7 +11,7 @@ async function getCharacterDetail(id: string) {
 
 export default async function DetailCard({ id }: { id: string }) {
   const character = await getCharacterDetail(id);
-  console.log("character", character);
+
   return (
     <>
       <div className="p-5">

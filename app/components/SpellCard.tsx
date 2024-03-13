@@ -8,7 +8,6 @@ async function getSpells() {
 
 export default async function SpellCard() {
   const spells = await getSpells();
-  console.log("spells", spells);
 
   // spells 배열이 비어있지 않는 경우에 랜덤 인덱스 생성
   const randomSpellIndex =
