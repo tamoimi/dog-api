@@ -16,6 +16,7 @@ export default async function DetailCard({ id }: { id: string }) {
     <>
       <div className="p-5">
         <NavBar />
+        <p className="text-center font-medium text-xl">Character information </p>
         <div className=" m-auto mt-2 max-w-sm bg-white border border-gray-200 rounded-lg shadow ">
           <Image
             className="rounded-t-lg"
