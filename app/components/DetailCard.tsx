@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { API_URL } from "../api/harry-potter";
+import { API_URL } from "../api/harry-potter_api";
 import NavBar from "./NavBar";
 
 async function getCharacterDetail(id: string) {

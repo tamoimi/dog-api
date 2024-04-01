@@ -1,4 +1,4 @@
-import { API_URL } from "../api/harry-potter";
+import { API_URL } from "../api/harry-potter_api";
 
 async function getSpells() {
   const response = await fetch(`${API_URL}/spells`);

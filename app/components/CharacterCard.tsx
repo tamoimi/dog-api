@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { API_URL } from "../api/harry-potter";
+import { API_URL } from "../api/harry-potter_api";
 import { HiArrowSmallRight } from "react-icons/hi2";
 
 async function getCharacter() {
