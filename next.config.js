@@ -10,6 +10,6 @@
 
 module.exports = {
   images: {
-    domains: ['ik.imagekit.io'],
+    domains: ['images.remotePatterns'],
   },
 };
