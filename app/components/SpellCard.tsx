@@ -1,4 +1,5 @@
 import { API_URL } from "../api/harry-potter_api";
+import { HiOutlineRefresh } from "react-icons/hi";
 
 async function getSpells() {
   const response = await fetch(`${API_URL}/spells`);
@@ -12,12 +13,12 @@ export default async function SpellCard() {
   // spells 배열이 비어있지 않는 경우에 랜덤 인덱스 생성
   const randomSpellIndex =
     spells && spells.length > 0 ? Math.floor(Math.random() * spells.length) : null;
-
   const randomSpell = spells && randomSpellIndex !== null ? spells[randomSpellIndex] : null;
 
   return (
     <div className="w-full">
       <p className="text-xl font-semibold mb-2">Today&apos;s spell ✨</p>
+
       {randomSpell && (
         <div className="">
           <div className="flex items-start gap-2.5">
