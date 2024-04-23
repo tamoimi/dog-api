@@ -1,7 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { API_URL } from "../api/harry-potter_api";
-import { HiArrowSmallRight } from "react-icons/hi2";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 async function getCharacter() {
   const response = await fetch(`${API_URL}/characters`);
@@ -14,57 +22,34 @@ export default async function CharacterCard() {
 
   return (
     <>
+      {/* =------------------------------------------------------- */}
+
       <div className="grid md:grid-cols-4 grid-cols-2 gap-6">
         {characters?.slice(0, 20).map((p: any) => (
-          <div
-            className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
-            key={p.id}
-          >
+          <Card className="" key={p.id}>
             <Link href={`/characters/${p.id}`}>
-              <Image
-                className="rounded-t-lg"
-                src={p.image}
-                alt={p.image}
-                width={0}
-                height={0}
-                style={{ width: "100%", height: "auto" }}
-                sizes="100vw"
-              />
+              <CardHeader>
+                <CardTitle> {p.name}</CardTitle>
+                <CardDescription>{p.house}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Image
+                  className="rounded"
+                  src={p.image}
+                  alt={p.image}
+                  width={0}
+                  height={0}
+                  style={{ width: "100%", height: "auto" }}
+                  sizes="100vw"
+                />
+              </CardContent>
+              <CardFooter className="flex justify-between">
+                <Link href={`/characters/${p.id}`}>
+                  <Button>Read more</Button>
+                </Link>
+              </CardFooter>
             </Link>
-            <div className="p-2">
-              <h5 className="mb-2 font-bold tracking-tight text-gray-900 dark:text-white">
-                {p.name}
-              </h5>
-
-              <div className="flex gap-1">
-                <span className=" text-neutral-700 font-semibold">House:</span>
-                <span>{p.house}</span>
-              </div>
-
-              <Link
-                href={`/characters/${p.id}`}
-                className="inline-flex items-center font-semibold p-2 text-xs text-center bg-yellow-600 rounded-lg hover:bg-yellow-700 transition duration-300 mt-3"
-              >
-                Read more
-                {/* <HiArrowSmallRight className="ml-1" /> */}
-                <svg
-                  className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                  />
-                </svg>
-              </Link>
-            </div>
-          </div>
+          </Card>
         ))}
       </div>
     </>
